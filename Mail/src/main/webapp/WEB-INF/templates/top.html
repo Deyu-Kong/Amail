@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{
+            margin: 0;
+        }
+        body{
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<!--<h1>Amail</h1>-->
+<div th:text="'欢迎: '+${session.username}"></div>
+<!--<a th:href="@{/login}">切换用户</a>-->
+</body>
+</html>

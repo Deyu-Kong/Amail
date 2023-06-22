@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>用户登录</title>
+    <link rel="stylesheet" th:href="@{/static/css/login.css}" />
+</head>
+<body>
+<div class="divleft">
+    <h2 style="font-family: fantasy; color: darkgoldenrod;"> Amail</h2>
+</div>
+<div class="divright">
+    <div class="login">
+        <h2>用户登录</h2>
+        <form method="post">
+<!--            <div class="login_box">-->
+                <input name="host" type="hidden" required value="pop.qq.com">
+<!--                <label>主机名</label>-->
+<!--            </div>-->
+            <div class="login_box">
+                <input name="username" type="text" required value="1518579103@qq.com">
+                <label>用户名</label>
+            </div>
+            <div class="login_box">
+                <input name="password" type="password" required value="gpnllxywxoxxjhbi">
+                <label>密码</label>
+            </div>
+<!--            <input type="submit" value="提交">-->
+            <a th:href="@{/login}" @click="getMailMethod">
+                登录
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/static/js/vue.js}"></script>
+<script type="text/javascript">
+    var vue = new Vue({
+        el:".login",
+        methods:{
+            getMailMethod(){
+                //获取form表单
+                var form = document.getElementsByTagName("form")[0];
+                //将超链接的href属性值赋值给form表单的action属性
+                //event.target表示当前触发事件的标签
+                form.action = event.target.href;
+                //表单提交
+                form.submit();
+                //阻止超链接的默认行为
+                event.preventDefault();
+            }
+        }
+    });
+</script>
+</body>
+</html>

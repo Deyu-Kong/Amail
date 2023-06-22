@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Amail邮件</title>
+</head>
+<body>
+<div id="header">
+    <p th:utext="${header}"></p>
+</div>
+<div th:if="${hasAppendix}" id="appendix">
+    附件:
+    <a th:href="@{'/appendix/'+${msgNum}+'/'+${bodyNum}+'/'+${filename}}" th:text="${filename}"></a>
+</div>
+<br>
+<div id="content">
+    <h2>邮件正文</h2>
+    <p th:utext ="${content}"></p>
+</div>
+</body>
+</html>

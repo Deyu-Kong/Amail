@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/static/css/main.css}">
+    <link rel="stylesheet" th:href="@{/static/css/sidebar.css}">
+<!--    <script type="text/javascript" th:src="@{/static/js/index.js}"></script>-->
+    <title>Amail</title>
+    <script>
+        window.onload=function (){
+            console.log("页面加载完毕");
+        }
+        document.documentElement.style.overflow='hidden';
+
+        function toWrite(){
+            // alert("write");
+            // let mainPage = document.getElementById("mainPage");
+            document.getElementById("mainPage").contentWindow.location.reload(true);
+
+            //不能使用thymeleaf
+            document.getElementById("mainPage").src = "http://localhost:8080/Amail/write";
+            event.preventDefault();
+        }
+
+        function toMails(){
+            document.getElementById("mainPage").contentWindow.location.reload(true);
+
+            //不能使用thymeleaf
+            document.getElementById("mainPage").src = "http://localhost:8080/Amail/page/main";
+            event.preventDefault();
+        }
+    </script>
+</head>
+<body over-flow="hidden">
+
+    <div id="div_top">
+        <iframe th:src="@{/page/top}" frameborder="no" scrolling="no"></iframe>
+    </div>
+    <div id="div_left">
+        <div class="siderbar">
+            <header>
+                <h1>Amail</h1>
+            </header>
+            <ul>
+                <li>
+                    <a onclick="toWrite()" href="javascript:void(0)">
+                    <i class="fa fa-paper-plane"></i>写信</a>
+                </li>
+                <li>
+                    <a onclick="toMails()" href="javascript:void(0)">
+                    <i class="fa fa-paper-plane"></i>收件箱</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="div_main">
+        <iframe id="mainPage" th:src="@{/page/main}"  frameborder="no"></iframe>
+    </div>
+<!--    <div id="div_bottom">-->
+<!--        <p class="center">版权所有&reg;，欢迎盗版</p>-->
+<!--    </div>-->
+</body>
+
+</html>

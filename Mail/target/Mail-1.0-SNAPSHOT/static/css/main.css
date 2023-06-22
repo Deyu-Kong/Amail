@@ -1,0 +1,40 @@
+html,body{
+    height: 100%;
+}
+body {
+    width: 100%;
+    margin: 0;
+    font-family: 'trebuchet MS', 'Lucida sans', Arial, serif;
+    font-size: 14px;
+    color: #444;
+    background: url(../css/img/body1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+     /*background: #F5F5F5; */
+}
+#div_top{
+    height:5%;
+    width:85%;
+    float: right;
+}
+#div_left{
+    height:100%;
+    width:15%;
+    float: left;
+}
+#div_main{
+    height:95%;
+    width:85%;
+    float: right;
+}
+#div_bottom{
+    background-color: #FFCCCC;
+    width:80%;
+    margin-left:20%;
+    border:0px solid blue;
+}
+
+iframe{
+    height:100%;
+    width:100%;
+}

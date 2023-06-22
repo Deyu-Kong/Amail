@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/static/css/write.css}">
+    <title>写信</title>
+    <script>
+        function sendMail(){
+            alert("确定发送？");
+            //处理正文内容
+            let content = document.getElementById("mainText").innerHTML;
+            let mainInput = document.getElementById("mainTextInput");
+            mainInput.value=content;
+            console.log(mainInput.value)
+
+            //处理附件内容
+            let attachment = document.getElementById("attachmentInput");
+            console.log(attachment.dir)
+            console.log(attachment.innerText)
+        }
+    </script>
+</head>
+<body>
+<template>
+    <div class="sidebar-container">
+        <tlbs-sidebar :nav-list="navList" :default-path="defaultPath"></tlbs-sidebar>
+    </div>
+</template>
+    <h3>写信</h3>
+    <form th:action="@{/send}" enctype="multipart/form-data" method="post">
+        <div id="to">
+            <p class="shortText">收件人:</p>
+            <div class="short">
+            <input type="email" name="to" value="275700993@qq.com">
+            </div>
+        </div>
+        <div id="cc">
+            <p class="shortText">抄送:</p>
+            <div class="short" >
+            <input type="email" name="cc" value="1679077554@qq.com">
+            </div>
+        </div>
+        <div id="subject">
+            <p class="shortText">邮件主题:</p>
+            <div class="short" >
+            <input type="text" name="subject" value="这是一封浏览器端的邮件">
+            </div>
+        </div>
+        <div id="body">
+            正文:<br>
+            <input class="long" id="mainTextInput" type="hidden" name="body">
+            <div id="mainText" contenteditable="true" accesskey="q">
+                <div><br></div>
+            </div>
+        </div>
+        <div id="attachment">
+            <p class="shortText">附件:</p>
+            <div class="short" >
+                <input id="attachmentInput" type="file" name="attachment" value="请选择附件">
+            </div>
+        </div>
+        <input id="button" type="submit" value="发送" onclick="sendMail()">
+    </form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+html{
+    height: 100%;
+    margin:0;
+    overflow: hidden;
+}
+
+p{
+    margin: 0;
+}
+
+h3{
+    margin-top: 5px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+body{
+    height:100%;
+    margin: 5px;
+}
+
+.shortText{
+    position: relative;
+    float: left;
+    width: 10%;
+}
+
+.short {
+    position: relative;
+    float: left;
+    width: 90%;
+}
+form{
+    height: 100%;
+}
+
+#body{
+    height: 80%;
+}
+
+#mainText{
+    position: relative;
+    left: 5%;
+    overflow:auto;
+    width: 80%;
+    height: 80%;
+    background: white;
+}
+
+#mainText div{
+    padding-left: 5px;
+}
+
+#button{
+    width: 20%;
+    position:relative;
+    left: 35%;
+}
+
+input{
+    width:50%;
+}
