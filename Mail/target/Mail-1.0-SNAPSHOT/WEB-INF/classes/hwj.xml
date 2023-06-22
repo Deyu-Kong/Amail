@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <staticContent>
+            <remove fileExtension=".mp3" />
+            <remove fileExtension=".mp4" />
+            <mimeMap fileExtension=".mp4" mimeType="application/mp4" />
+            <mimeMap fileExtension=".mp3" mimeType="application/mpeg" />
+            <mimeMap fileExtension="." mimeType="text/plain" />
+        </staticContent>
+    </system.webServer>
+</configuration> 
